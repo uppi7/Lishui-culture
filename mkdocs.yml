@@ -47,7 +47,7 @@ copyright: Copyright &copy; 2024 uppi
 
 plugins:
   - search
-  - blog
+  #- blog   #会有blog文件
   - tags
 
 
