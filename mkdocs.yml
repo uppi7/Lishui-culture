@@ -1,6 +1,6 @@
 site_name: Lishui-culture
 site_url: https://uppi7.github.io/Lishui-culture
-repo_url: https://github.com/uppi7/Lishui-culture
+#repo_url: https://github.com/uppi7/Lishui-culture  #显示github仓库
 
 theme:
   name: material
@@ -39,26 +39,16 @@ theme:
     - toc.integrate
     - content.code.annotate # 代码行号
     - content.code.copy # 代码复制
+    - header.autohide
 
   language: 'zh'
-  icon:
-    admonition:
-      note: octicons/tag-16
-      abstract: octicons/checklist-16
-      info: octicons/info-16
-      tip: octicons/squirrel-16
-      success: octicons/check-16
-      question: octicons/question-16
-      warning: octicons/alert-16
-      failure: octicons/x-circle-16
-      danger: octicons/zap-16
-      bug: octicons/bug-16
-      example: octicons/beaker-16
-      quote: octicons/quote-16
 
 copyright: Copyright &copy; 2024 uppi
-hide:
-  - path
+
+plugins:
+  - search
+  - blog
+  - tags
 
 
 extra:
@@ -66,38 +56,44 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/uppi7
 
-markdown_extensions:
-  # Python Markdown
+
+extra:
+  generator: false
+
+markdown_extensions: # markdown extensions
   - abbr
   - admonition
   - attr_list
   - def_list
-  - tables
   - footnotes
   - md_in_html
   - toc:
       permalink: true
-      toc_depth: 5
-      permalink_title: 点击此处可置顶内容
-  # Python Markdown Extensions
   - pymdownx.arithmatex:
       generic: true
-  - pymdownx.betterem
-  - pymdownx.tabbed:
-      alternate_style: true
+  - pymdownx.betterem:
+      smart_enable: all
   - pymdownx.caret
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
   - pymdownx.mark
   - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -105,13 +101,30 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-  - pymdownx.snippets:
-      auto_append:
-        - includes/abbreviations.md
 
-extra:
-  generator: false
+extra_css:
+  - assets/stylesheets/extra.css
+  #- assets/stylesheets/glightbox.min.css
+  #- assets/stylesheets/galaxy.css
+  #- assets/stylesheets/charging.css
+  #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+  #- https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
 
+extra_javascript:
+  #- assets/javascripts/katex.js 
+  #- assets/javascripts/mathjax.js
+  #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+  #- https://polyfill.io/v3/polyfill.min.js?features=es6
+  #- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  #- assets/javascripts/titlechange.js
+  #- assets/javascripts/glightbox.min.js
+  - assets/javascripts/click.js
+  #- assets/javascripts/galaxy.js
