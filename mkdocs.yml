@@ -4,6 +4,8 @@ site_url: https://uppi7.github.io/Lishui-culture
 
 theme:
   name: material
+  logo: assets/校徽_白.png
+  favicon: assets/校徽_黑.png
 
   palette: 
     # Palette toggle for dark mode
