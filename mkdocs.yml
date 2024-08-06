@@ -51,7 +51,7 @@ plugins:
   - search
   #- blog   #会有blog文件
   #- tags
-  - glightbox
+  #- glightbox  # 报错
 
 
 extra:
@@ -111,6 +111,7 @@ markdown_extensions: # markdown extensions
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+
 
 extra_css:
   - assets/stylesheets/extra.css
