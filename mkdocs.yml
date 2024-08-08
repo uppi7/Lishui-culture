@@ -131,4 +131,5 @@ extra_javascript:
   #- assets/javascripts/titlechange.js
   #- assets/javascripts/glightbox.min.js
   - assets/javascripts/click.js
+  - assets/javascripts/try8_8.js
   #- assets/javascripts/galaxy.js
